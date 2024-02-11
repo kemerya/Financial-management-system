@@ -1,0 +1,188 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Financial_Managment_System.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
+    <!-- Bootstrap and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
+    <%--This is my bootstrap CSS--%>
+    <link href="Bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+    <%--This is my datatables CSS--%>
+    <link href="datatables/CSS/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--This is my fontawesome CSS--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+    <%--This is JS/jquery--%>
+    <script src="Bootstrap/JS/jquery-3.3.1.slim.min.js"></script>
+    <%--This is JS/popper--%>
+    <script src="Bootstrap/JS/popper.min.js"></script>
+    <%--This is JS/bootstrap--%>
+    <script src="Bootstrap/JS/bootstrap.min.js"></script>
+    <%--This is my customsheet CSS--%>
+    <link href="CSS/customStylsheet.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: black;
+            animation: fadeInUp 0.5s;
+            color: #ffffff;
+            font-size: 1.0rem;
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-size: 1.4rem;
+        }
+
+        .navbar-toggler-icon {
+            background-color: black;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            margin: 0 10px;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #e9ecef;
+            }
+
+        .footer {
+            background-color: black;
+            color: #ffffff;
+            text-align: center;
+            padding: 0px;
+            /* position: fixed;*/
+            bottom: 0;
+            width: 100%;
+        }
+
+            .footer a {
+                color: #ffffff;
+            }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <nav class="navbar navbar-expand-lg ">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/Kabr.png" width="80" height="80" />
+                    Financial Managment system </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-coontrols="navbarSupportedContent" aria-expanded="false"
+                    aria-lable="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click" Visible="True">Tip</asp:LinkButton>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" Visible="True">Budget Plan</asp:LinkButton>
+                        </li>
+                    </ul>
+
+
+
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Dashboard</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Income</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Expense</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click1">View Income</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">View Expense</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click">Useful Tips</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton Class="nav-link" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Logout</asp:LinkButton>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </nav>
+        </div>
+
+        <!--main content place holder-->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="Server"></asp:ContentPlaceHolder>
+        </div>
+        <!--main content place holder-->
+
+
+        <footer class="footer fa-expand align-bottom ">
+            <p>&copy All right Reserved. <a class="footerlinks" href="#" target="_blank">KABR</a> </p>
+        </footer>
+    </form>
+</body>
+</html>
