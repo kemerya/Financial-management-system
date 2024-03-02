@@ -1,6 +1,6 @@
 # Personal Financial Management System
 
-(![Landing](https://github.com/kemerya/library/assets/123075499/13f0d72c-5571-4446-9085-664a999f11c1)
+![Landing](https://github.com/kemerya/library/assets/123075499/13f0d72c-5571-4446-9085-664a999f11c1)
 
 
 ## Overview
